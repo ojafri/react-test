@@ -50,9 +50,9 @@ constructor(props){
                       </Breadcrumb>                                        
                   </Well>
               </div>
-                  <Col xs={12} md={10}>
-                      {this.props.children}
-                  </Col>
+            <Col xs={12} md={10}>
+                {this.props.children}
+            </Col>
               <Footer date={this.state.date}/>
           </div>
       </MuiThemeProvider>

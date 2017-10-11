@@ -29,6 +29,8 @@ import Well from 'react-bootstrap/lib/Well';
 import Breadcrumb from 'react-bootstrap/lib/Breadcrumb';
 import logo from '../logo.svg';
 import userlogo from '../images/Avatar.png'
+import EditorInsertChart from 'material-ui/svg-icons/editor/insert-chart';
+import logo from '../logo.svg';
 import Aetna from '../images/Aetna.svg';
 import '../App.css';
 
@@ -148,6 +150,9 @@ class Header extends Component
                             </Col>
                         </Row>
                     </Grid>
+                {/*<div>
+                    <h4>{this.props.name} {this.props.greeting}</h4>        
+                </div>*/}                
             </div>
         );
     }

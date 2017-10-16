@@ -29,22 +29,6 @@ import userlogo from '../images/Avatar.png'
 import Aetna from '../images/Aetna.svg';
 import '../App.css';
 
-const muiTheme = getMuiTheme({
-  palette: {
-    textColor: blue900,
-  },
-  appBar: {
-    height: 20,
-  },
-});
-
-const listStyle = {
-  display: 'inline-block',
-  margin: '10% 0 0 0',
-  float: 'left',
-  left: '0px',
-};
-const subheaderColor={
 const appBarStyle = {
     margin: '0 0 0 0',
     menuButton: {

@@ -3,7 +3,7 @@ import ResponsiveEmbed from 'react-bootstrap/lib/ResponsiveEmbed';
 import Panel from 'react-bootstrap/lib/Panel';
 
 const appBarStyle = {
-    margin: '0 0 0 3%',
+    margin: '5% 0 0 0',
 }
 
 class Home extends Component{
@@ -12,7 +12,7 @@ class Home extends Component{
     }
     render() {
         return (
-            <ResponsiveEmbed a16by9 style={appBarStyle}>
+            <ResponsiveEmbed a4by3 style={appBarStyle}>
                 <embed src="https://www.birst.com/"/>
             </ResponsiveEmbed>
         );

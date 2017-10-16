@@ -7,16 +7,15 @@
   height: 20px;
   float: left;
   left: 15px;
-  position: absolute;
+  /*position: absolute;*/
   /*bottom: 0px;*/
   /*z-index: 100;*/
 }
 
 .App-header {
   background-color: transparent;
-  height: 20px;
   /*color: white;*/
-  width: 99%;  
+  width: 100%;  
 }
 
 .App-header h2{

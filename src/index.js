@@ -12,7 +12,6 @@ ReactDOM.render((
 <Provider store={store}>
     <HashRouter>
         <App>
-            <Route exact path='/' component={Home}/>
             {/*<Route path = "/someotherroute" component = {SomeotherComponent} />*/}
         </App>
     </HashRouter>

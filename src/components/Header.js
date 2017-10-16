@@ -1,36 +1,31 @@
 import React,{ Component } from 'react';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
-//import Badge from 'material-ui/Badge';
-import Badge from 'react-bootstrap/lib/Badge';
-import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
+import Badge from 'material-ui/Badge';
 import Drawer from 'material-ui/Drawer';
 import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
-import IconButton from 'material-ui/IconButton';
 //import MobileTearSheet from 'material-ui/M';
 import {List, ListItem} from 'material-ui/List';
-import ActionInfo from 'material-ui/svg-icons/action/info';
 import Divider from 'material-ui/Divider';
-import Subheader from 'material-ui/Subheader';
 import Avatar from 'material-ui/Avatar';
-import FileFolder from 'material-ui/svg-icons/file/folder';
-import ActionAssignment from 'material-ui/svg-icons/action/assignment';
-import {cyan500, blue500, blue900, yellow600, deepPurple600} from 'material-ui/styles/colors';
-import EditorInsertChart from 'material-ui/svg-icons/editor/insert-chart';
+import { withStyles } from 'material-ui/styles';
+//import ActionAssignment from 'material-ui/svg-icons/action/assignment';'
+import Typography from 'material-ui/Typography';
+import Toolbar from 'material-ui/Toolbar';
+import IconButton from 'material-ui/IconButton';
+import MenuIcon from "material-ui-icons/Menu";
+import * as colors from 'material-ui/colors';
 import {GridList, GridTile} from 'material-ui/GridList';
+import NotificationIcon from 'material-ui-icons/Notifications';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import Grid from 'react-bootstrap/lib/Grid';
 import Panel from 'react-bootstrap/lib/Panel';
 import Well from 'react-bootstrap/lib/Well';
+import Icon from 'material-ui/Icon';
 import Breadcrumb from 'react-bootstrap/lib/Breadcrumb';
 import logo from '../logo.svg';
 import userlogo from '../images/Avatar.png'
-import EditorInsertChart from 'material-ui/svg-icons/editor/insert-chart';
-import logo from '../logo.svg';
 import Aetna from '../images/Aetna.svg';
 import '../App.css';
 
@@ -50,20 +45,20 @@ const listStyle = {
   left: '0px',
 };
 const subheaderColor={
-    backgroundColor: '#5E35B1',
-    color: 'white'
-}
-
 const appBarStyle = {
-    margin: '0 0 0 2%',
+    margin: '0 0 0 0',
+    menuButton: {
+        marginLeft: -12,
+        marginRight: 20,
+    },
+    flex: {
+        flex: 1,
+      },
+}
+const notifCont={
+    float: 'right'
 }
 const appTitle = 'ART - Birst Reporting';
-
-const style = {
-  display: 'inline-block',
-  margin: '16px 16px 16px 0',
-  float: 'left'
-};
 
 class Header extends Component
 {
@@ -82,78 +77,34 @@ class Header extends Component
     }
         
     render(){
-        return(
-                <div className="App-header">
-                    <Grid fluid={true}>
-                        <Row className="show-grid">                        
-                            <Col xs={6} md={2}>
-                                <div>
-                                    <img src={Aetna} className="App-logo" alt="logo" />
-                                    <Paper style={listStyle}>
-                                        <img src={userlogo} alt="user-logo"/>
-                                        <List>
-                                            <Subheader inset={true} className="subHeaderStyle" style={subheaderColor}>Robert Scott</Subheader>
-                                            <ListItem
-                                                leftAvatar={<Avatar icon={<FileFolder />} />}
-                                                rightIcon={<ActionInfo />}
-                                                primaryText="Trend Analysis"
-                                                secondaryText="Trend Analysis"
-                                            />
-                                            <ListItem
-                                                leftAvatar={<Avatar icon={<FileFolder />} />}
-                                                rightIcon={<ActionInfo />}
-                                                primaryText="Prescription Drugs"
-                                                secondaryText="Prescription Drugs"
-                                            />
-                                            <ListItem
-                                                leftAvatar={<Avatar icon={<FileFolder />} />}
-                                                rightIcon={<ActionInfo />}
-                                                primaryText="High Cost Claimants"
-                                                secondaryText="High Cost Claimants"
-                                            />
-                                            </List>
-                                            <Divider inset={true} />
-                                            <List>
-                                            {/*<Subheader inset={true}>Files</Subheader>*/}
-                                            <ListItem
-                                                leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={blue500} />}
-                                                rightIcon={<ActionInfo />}
-                                                primaryText="Program Management"
-                                                secondaryText="Program Management"
-                                            />
-                                            <ListItem
-                                                leftAvatar={<Avatar icon={<EditorInsertChart />} backgroundColor={yellow600} />}
-                                                rightIcon={<ActionInfo />}
-                                                primaryText="Recent Reports"
-                                                secondaryText="Recent Reports"
-                                            />
-                                        </List>                    
-                                    </Paper>   
-                                </div>                              
-                            </Col>
-                            <Col xs={12} md={10}>
-                                <Drawer docked={false} width={350} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
-                                    <Paper style={listStyle}>
-                                        <Menu>
-                                            <MenuItem onClick={this.handleClose.bind(this)}>Trend Analysis</MenuItem>
-                                            <MenuItem onClick={this.handleClose.bind(this)}>Prescription Drugs</MenuItem>
-                                            <MenuItem onClick={this.handleClose.bind(this)}>High Cost Claimants</MenuItem>
-                                            <MenuItem onClick={this.handleClose.bind(this)}>Gaps in Care Analysis Care Management</MenuItem>
-                                            <MenuItem onClick={this.handleClose.bind(this)}>Program Management</MenuItem>
-                                            <MenuItem onClick={this.handleClose.bind(this)}>Recent Reports</MenuItem>                            
-                                        </Menu>
-                                    </Paper>
-                                </Drawer>
-                                <AppBar title={appTitle} onLeftIconButtonTouchTap={this.handleToggle.bind(this)} style={appBarStyle}
-                                        iconElementRight={<IconButton tooltip="Notifications"><Badge>42</Badge><NotificationsIcon /></IconButton>}>
-                                </AppBar>
-                            </Col>
-                        </Row>
-                    </Grid>
-                {/*<div>
-                    <h4>{this.props.name} {this.props.greeting}</h4>        
-                </div>*/}                
-            </div>
+        return(//iconElementRight=//onLeftIconButtonTouchTap={this.handleToggle.bind(this)} 
+        <div className="App-header">
+            <AppBar style={appBarStyle}>
+                <Toolbar>
+                    <IconButton color="contrast" aria-label="Menu" onClick={this.props.toggle}>
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography type="title" color="inherit" className={appBarStyle.flex} noWrap>
+                        {appTitle}
+                    </Typography>
+                    <Badge color="accent" badgeContent={42}>
+                        <NotificationIcon/>
+                    </Badge>
+                </Toolbar>
+            </AppBar>
+            {/* <Drawer docked={false} width={350} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
+                <Paper>
+                    <Menu>
+                        <MenuItem onClick={this.handleClose.bind(this)}>Trend Analysis</MenuItem>
+                        <MenuItem onClick={this.handleClose.bind(this)}>Prescription Drugs</MenuItem>
+                        <MenuItem onClick={this.handleClose.bind(this)}>High Cost Claimants</MenuItem>
+                        <MenuItem onClick={this.handleClose.bind(this)}>Gaps in Care Analysis Care Management</MenuItem>
+                        <MenuItem onClick={this.handleClose.bind(this)}>Program Management</MenuItem>
+                        <MenuItem onClick={this.handleClose.bind(this)}>Recent Reports</MenuItem>                            
+                    </Menu>
+                </Paper>
+            </Drawer> */}
+        </div>
         );
     }
 }

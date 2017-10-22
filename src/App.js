@@ -33,7 +33,7 @@ const myTheme = createMuiTheme({
   });
   const orangeTheme = createMuiTheme({
         palette: {
-          primary: orange, // Purple and green play nicely together.
+          primary: orange,
           secondary: {
             ...colors.grey,
             A400: '#00e677',
@@ -53,7 +53,7 @@ constructor(props){
     super(props); //Mandatory      
     this.state={
       date: new Date(),
-      theme: orangeTheme
+      theme: myTheme
     };
   }
   render() {  

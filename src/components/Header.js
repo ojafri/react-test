@@ -76,18 +76,6 @@ class Header extends Component
                     </Badge>
                 </Toolbar>
             </AppBar>
-            {/* <Drawer docked={false} width={350} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
-                <Paper>
-                    <Menu>
-                        <MenuItem onClick={this.handleClose.bind(this)}>Trend Analysis</MenuItem>
-                        <MenuItem onClick={this.handleClose.bind(this)}>Prescription Drugs</MenuItem>
-                        <MenuItem onClick={this.handleClose.bind(this)}>High Cost Claimants</MenuItem>
-                        <MenuItem onClick={this.handleClose.bind(this)}>Gaps in Care Analysis Care Management</MenuItem>
-                        <MenuItem onClick={this.handleClose.bind(this)}>Program Management</MenuItem>
-                        <MenuItem onClick={this.handleClose.bind(this)}>Recent Reports</MenuItem>                            
-                    </Menu>
-                </Paper>
-            </Drawer> */}
         </div>
         );
     }

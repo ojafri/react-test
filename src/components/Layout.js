@@ -126,9 +126,8 @@ class Layout extends Component
             <Grid fluid={true}>
                 <Row className="show-grid">                        
                     {/* <Hidden mdUp> */}
-                        <Drawer type="temporary" anchor={theme.direction === 'rtl' ? 'right' : 'left'} open={this.state.open}
-                        onRequestClose={this.handleToggle.bind(this)} ModalProps={{
-                            keepMounted: true,}}>
+                        <Drawer type="temporary" theme={theme} open={this.state.open}
+                        onRequestClose={this.handleToggle.bind(this)} ModalProps={{keepMounted: true,}}>
                             <LeftNavigation/>
                         </Drawer>
                     {/* </Hidden> */}

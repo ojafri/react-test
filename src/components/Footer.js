@@ -7,13 +7,26 @@ import { withTheme } from 'material-ui/styles'
 import '../App.css';
 
 class Footer extends Component
-{        
+{
     render(){
-        const theme=withTheme(this.props.appTheme)
-        console.log(theme.colorPrimary)
+        const {theme} = this.props;
+        const primaryText = theme.palette.text.primary;
+        const primaryColor = theme.palette.primary[500];
+        const styles = {
+            primaryText: {
+            background: theme.palette.background.default,
+            padding: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px`,
+            color: primaryText,
+            },
+            primaryColor: {
+            background: primaryColor,
+            //padding: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px`,
+            color: '#fff',
+            },
+        };
         return(
             <div>
-                <div className="App-footer">
+                <div className="App-footer" style={styles.primaryColor}>
                     <span id="dateText">Date & time on the server is: {this.props.date.toTimeString()}</span>
                     <span>Copyright The © symbol, or the word 'Copyright' or abbreviation 'Copr.'</span>
                 </div>
